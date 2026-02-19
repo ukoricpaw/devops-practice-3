@@ -5,6 +5,9 @@ on:
 jobs:
   publishing:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -40,6 +43,6 @@ jobs:
           script: |
             docker stop practice-3
             docker rm practice-3
-            docker pull devops-practice-3:latest
-            docker run -d --name practice-3 -p 8080:8080 devops-practice-3:latest
+            docker pull devops-practice-3:main
+            docker run -d --name practice-3 -p 8080:8080 devops-practice-3:main
             docker image prune
