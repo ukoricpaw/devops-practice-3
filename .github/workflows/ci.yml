@@ -1,11 +1,13 @@
 name: CD
 on:
   push:
-    branches: ["main"]
+    branches: ["dev"]
 jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
+      - name: Project setup
+        run: npm ci
       - name: Code linting
         run: npm run lint
   publishing:
