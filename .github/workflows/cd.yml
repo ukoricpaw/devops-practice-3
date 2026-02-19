@@ -1,13 +1,8 @@
-name: CI_CD
+name: CI
 on:
   push:
-    branches: ["main"]
+    branches: ["dev"]
 jobs:
-  testing:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code linting
-        run: npm run lint
   publishing:
     runs-on: ubuntu-latest
     steps:
