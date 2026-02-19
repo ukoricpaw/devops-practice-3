@@ -40,10 +40,9 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
           script: |
             docker stop practice-3
             docker rm practice-3
-            docker pull devops-practice-3:main
-            docker run -d --name practice-3 -p 8080:8080 devops-practice-3:main
+            docker pull ghcr.io/ukoricpaw/devops-practice-3:main
+            docker run -d --name practice-3 -p 8080:8080 ghcr.io/ukoricpaw/devops-practice-3:main
             docker image prune
