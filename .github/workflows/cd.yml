@@ -15,6 +15,6 @@ jobs:
           script: |
             docker stop practice-3
             docker rm practice-3
-            docker pull ghcr.io/ukoricpaw/devops-practice-3:main
-            docker run -d --name practice-3 -p 8080:8080 ghcr.io/ukoricpaw/devops-practice-3:main
+            docker pull ghcr.io/ukoricpaw/devops-practice-3:dev
+            docker run -d --name practice-3 -p 8080:8080 ghcr.io/ukoricpaw/devops-practice-3:dev
             docker image prune
