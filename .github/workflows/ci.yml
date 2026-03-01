@@ -6,11 +6,14 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Project setup
         run: npm ci
       - name: Code linting
         run: npm run lint
   publishing:
+    needs: [testing]
     runs-on: ubuntu-latest
     permissions:
       contents: read
