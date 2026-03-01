@@ -8,6 +8,8 @@ app.use(json());
 
 const COLORS = ["red", "blue", "green"];
 
+const someUnusedVar = "hello";
+
 app.get("/colors", (req, res) => {
   res.json(
     COLORS.map((color, index) => ({
